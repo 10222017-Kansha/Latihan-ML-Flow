@@ -40,6 +40,7 @@ jobs:
       # Run as a mlflow project
       - name: Run mlflow project
         run: |
+          export MLFLOW_TRACKING_URI=sqlite:///mlruns/mlflow.db
           mlflow run MLproject --env-manager=local
       
       # Get latest run_id
